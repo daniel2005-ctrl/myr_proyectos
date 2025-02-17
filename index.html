@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYR proyectos y construcciones</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: grey;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            position: relative;
+            background-image: url('C:/Users/SAMUEL TARAZONA/OneDrive/Desktop/Nueva carpeta/imagenes/myr72/Fondo 72.png');
+            background-size: cover;
+            background-position: center;
+            height: 145vh;
+        }
+
+        /* Línea negra separadora */
+        .separator {
+            border: none;
+            height: 5px;
+            background-color: #000;
+            margin: 0;
+        }
+
+        /* Barra de navegación */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.0);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .navbar div {
+            display: flex;
+            justify-content: flex-end;
+            flex: 1;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .logo-container {
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 102, 0);
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-size: cover;
+            background-position: left;
+            height: 8vh;
+            margin: 0;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 100px;
+            margin-right: 15px;
+            border-radius: 50%;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #ff6a00;
+            color: black;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e55b00;
+        }
+
+        :root {
+            --text-color: #050505;
+        }
+
+        .proyectos {
+            padding: 50px 20px;
+            background: #f4f4f4;
+            color: var(--text-color);
+        }
+
+        .proyectos h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+
+        .proyecto-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px;
+            flex-wrap: nowrap;
+        }
+
+        .proyecto {
+            width: 250px;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .proyecto:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .proyecto img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .proyecto .descripcion {
+            padding: 15px;
+            color: var(--text-color);
+        }
+
+        .proyecto .descripcion h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .proyecto .descripcion p {
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .contacto {
+            padding: 50px 20px;
+            background: #fff;
+            color: var(--text-color);
+        }
+
+        .contacto h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .formulario {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-submit {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff6a00;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background-color: #e55b00;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo"></div>
+    </div>
+    <div class="separator"></div>
+
+    <div class="hero"></div>
+
+    <div class="logo">
+        <div class="navbar">
+            <div>
+                <a href="#proyectos">Proyectos</a>
+                <a href="C:/Users/SAMUEL TARAZONA/OneDrive/Desktop/Nueva carpeta/Nostros.html">Nosotros</a>
+                <a href="#contacto">Contáctanos</a>
+            </div>
+        </div>
+        <div class="separator"></div>
+        <div class="hero-text">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1 style="color: black; font-weight: bold;">Construyendo un futuro firme</h1>
+            <p style="font-weight: bold; color: black;">Honestos y confiables desde 1968</p>
+            <a href="#proyectos" class="btn">Ver proyectos</a>
+        </div>
+    </div>
+
+    <section id="proyectos" class="proyectos">
+        <h2 class="texto-color">Nuestros Proyectos</h2>
+        <div class="proyecto-container">
+            <div class="proyecto">
+                <a href="C:/Users/SAMUEL TARAZONA/OneDrive/Desktop/Nueva carpeta/proyecto 1.html" target="_blank">
+                    <img src='C:/Users/SAMUEL TARAZONA/OneDrive/Desktop/Nueva carpeta/imagenes/myr72/proyecto 1.png' alt="Proyecto 1">
+                    <div class="descripcion">
+                        <h3>Edificio Residencial</h3>
+                        <p>Construcción de un complejo moderno en el centro de la ciudad.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="proyecto">
+                <a href="C:/Users/SAMUEL TARAZONA/OneDrive/Desktop/Nueva carpeta/proyecto 2.html" target="_blank">
+                    <img src='C:/Users/SAMUEL TARAZONA/OneDrive/Desktop/Nueva carpeta/imagenes/myr72/proyecto 3.png' alt="Proyecto 2">
+                    <div class="descripcion">
+                        <h3>Alto de Rincón de Varsovia</h3>
+                        <p>Edificio de oficinas con diseño sostenible.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="proyecto">
+                <a href="C:/Users/SAMUEL TARAZONA/OneDrive/Desktop/Nueva carpeta/proyecto 3.html" target="_blank">
+                    <img src='C:/Users/SAMUEL TARAZONA/OneDrive/Desktop/Nueva carpeta/imagenes/myr72/proyecto 2.png' alt="Proyecto 3">
+                    <div class="descripcion">
+                        <h3>Prados de Varsovia</h3>
+                        <p>Zona residencial para familias jóvenes.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="proyecto">
+                <a href="C:/Users/SAMUEL TARAZONA/OneDrive/Desktop/Nueva carpeta/proyecto 4.html" target="_blank">
+                    <img src='C:/Users/SAMUEL TARAZONA/OneDrive/Desktop/Nueva carpeta/imagenes/rincon/Rincon1.jpeg' alt="Proyecto 4">
+                    <div class="descripcion">
+                        <h3>Rincón de Varsovia</h3>
+                        <p>Conjunto de apartamentos en el norte de la ciudad.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+        <h2>Contáctanos</h2>
+        <div class="formulario">
+            <form action="procesar_formulario.php" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="telefono">Número de celular o teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu número de teléfono" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="proyecto">Proyecto de interés:</label>
+                    <select id="proyecto" name="proyecto" required>
+                        <option value="" disabled selected>Selecciona un proyecto</option>
+                        <option value="edificio_residencial">Edificio Residencial</option>
+                        <option value="alto_rincon">Alto de Rincón de Varsovia</option>
+                        <option value="prados_varsovia">Prados de Varsovia</option>
+                        <option value="rincon_varsovia">Rincón de Varsovia</option>
+                    </select>
+                </div>
+            
+                <button type="submit" class="btn-submit">Enviar</button>
+                </form>          
+        </div>
+    </section>
+</body>
+</html>
